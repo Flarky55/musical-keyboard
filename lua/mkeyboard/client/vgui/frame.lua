@@ -167,7 +167,7 @@ function PANEL:Init()
     sliderKeyboardTranspose.Label:SetFont( "MKeyboard_Small" )
 
     -- Keyboard - Additional note release time
-    local sliderKeyboardRelease = StyledTheme.CreateFormSlider( settingsScroll, "#musicalk.vkeys.release_time", Config.keyboardNoteReleaseTime, 0.0, 0.8, 2, function( value )
+    local sliderKeyboardRelease = StyledTheme.CreateFormSlider( settingsScroll, "#musicalk.vkeys.release_time", Config.keyboardNoteReleaseTime, 0.0, MKeyboard.MAX_ADDITIONAL_RELEASE_TIME, 2, function( value )
         Config.keyboardNoteReleaseTime = value
         Config:Save()
     end )

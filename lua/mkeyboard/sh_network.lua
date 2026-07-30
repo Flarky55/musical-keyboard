@@ -17,7 +17,7 @@ MKeyboard.TRANSMIT_BUFFER_INTERVAL = 0.3 -- In seconds
 -- Must stay within the limits of net.WriteUInt.
 MKeyboard.MAX_NOTE_EVENTS = 60
 
--- The amount of bits used to store event count/active note count.
+-- The amount of bits used to store event count.
 -- This must accomodate the `MKeyboard.MAX_NOTE_EVENTS` number.
 local NOTE_COUNT_BITS = 6
 local Clamp = math.Clamp
@@ -26,6 +26,8 @@ do
     local WriteUInt = net.WriteUInt
     local WriteBool = net.WriteBool
     local WriteFloat = net.WriteFloat
+
+    local MAX_ADDITIONAL_RELEASE_TIME = MKeyboard.MAX_ADDITIONAL_RELEASE_TIME
 
     function MKeyboard.WriteEvents( events )
         local eventCount = Clamp( #events, 0, MKeyboard.MAX_NOTE_EVENTS )
@@ -47,7 +49,7 @@ do
                 WriteUInt( event.velocity, 7 )
                 WriteBool( event.isAutomated )
             else
-                WriteFloat( Clamp( event.additionalReleaseTime or 0, 0, 0.8 ) )
+                WriteFloat( Clamp( event.additionalReleaseTime or 0, 0, MAX_ADDITIONAL_RELEASE_TIME ) )
             end
         end
     end
@@ -63,7 +65,7 @@ do
     local MIDI_CHANNEL_ID_MAX = MKeyboard.MIDI_CHANNEL_ID_MAX
 
     function MKeyboard.ReadEvents()
-        local eventCount = net.ReadUInt( NOTE_COUNT_BITS )
+        local eventCount = ReadUInt( NOTE_COUNT_BITS )
         eventCount = Clamp( eventCount, 0, MKeyboard.MAX_NOTE_EVENTS )
 
         local t = CurTime()

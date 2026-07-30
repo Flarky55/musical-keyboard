@@ -17,6 +17,11 @@ MKeyboard.MAX_PROCESSING_DISTANCE = 1200
 ]]
 MKeyboard.MAX_EMITTER_SOURCES = 30
 
+--[[
+    Max. value for the PC keyboard setting "Release time"
+]]
+MKeyboard.MAX_ADDITIONAL_RELEASE_TIME = 2.0
+
 -- Sandbox limits
 cleanup.Register( "musical_keyboards" )
 
