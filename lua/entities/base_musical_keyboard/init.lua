@@ -54,11 +54,13 @@ This array contains:
 [2] Note velocity (0-127)
 [3] Channel index (Between 0 and 15)
 [4] Instrument index (The number near each name on the instruments list)
-[5] Was the note played via an external MIDI device/program? (1 for "Yes", 0 for "No"))]],
+[5] Was the note played via an external MIDI device/program? (1 for "Yes", 0 for "No"))
+[6] The time when the event happened (based on CurTime)]],
             [[Triggered when the user released a note.
 This array contains:
 [1] Note MIDI number (0-127)
-[2] Channel index (Between 0 and 15)]]
+[2] Channel index (Between 0 and 15)
+[3] The time when the event happened (based on CurTime)]]
         } )
 
         self.wireReproduceEvents = {}
@@ -199,6 +201,7 @@ function ENT:ProcessServerNotes( t )
             notePressOutputTable[3] = event.channelIndex
             notePressOutputTable[4] = event.instrumentIndex
             notePressOutputTable[5] = event.isAutomated and 1 or 0
+            notePressOutputTable[6] = event.time
 
             TriggerOutput( self, "NotePressed", notePressOutputTable )
         end
@@ -210,6 +213,7 @@ function ENT:ProcessServerNotes( t )
 
             noteReleaseOutputTable[1] = event.note
             noteReleaseOutputTable[2] = event.channelIndex
+            noteReleaseOutputTable[3] = event.time
 
             TriggerOutput( self, "NoteReleased", noteReleaseOutputTable )
         end
