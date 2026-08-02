@@ -89,7 +89,7 @@ function Config:Load()
 
     SetNumber( self, "keyboardVelocity", data.keyboardVelocity, 1, 127, self.keyboardVelocity )
     SetNumber( self, "keyboardTranspose", data.keyboardTranspose, -48, 48, self.keyboardTranspose )
-    SetNumber( self, "keyboardNoteReleaseTime", data.keyboardNoteReleaseTime, 0.0, 1.0, self.keyboardNoteReleaseTime )
+    SetNumber( self, "keyboardNoteReleaseTime", data.keyboardNoteReleaseTime, 0.0, MKeyboard.MAX_ADDITIONAL_RELEASE_TIME, self.keyboardNoteReleaseTime )
 
     SetNumber( self, "midiTranspose", data.midiTranspose, -48, 48, self.midiTranspose )
 
