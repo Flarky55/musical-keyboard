@@ -740,3 +740,57 @@ MKeyboard:RegisterInstrument( "Church Organ", "sound/musical_keyboard/instrument
     volume = 0.4,
     releaseTime = 0.3
 } )
+
+MKeyboard:RegisterInstrument( "(GI) Windsong Lyre", "sound/musical_keyboard/instruments/gi_windsong_lyre", {
+{ note = 48, fileName = "C3.ogg" },
+{ note = 50, fileName = "D3.ogg" },
+{ note = 52, fileName = "E3.ogg" },
+{ note = 53, fileName = "F3.ogg" },
+{ note = 55, fileName = "G3.ogg" },
+{ note = 57, fileName = "A3.ogg" },
+{ note = 59, fileName = "B3.ogg" },
+{ note = 60, fileName = "C4.ogg" },
+{ note = 62, fileName = "D4.ogg" },
+{ note = 64, fileName = "E4.ogg" },
+{ note = 65, fileName = "F4.ogg" },
+{ note = 67, fileName = "G4.ogg" },
+{ note = 69, fileName = "A4.ogg" },
+{ note = 71, fileName = "B4.ogg" },
+{ note = 72, fileName = "C5.ogg" },
+{ note = 74, fileName = "D5.ogg" },
+{ note = 76, fileName = "E5.ogg" },
+{ note = 77, fileName = "F5.ogg" },
+{ note = 79, fileName = "G5.ogg" },
+{ note = 81, fileName = "A5.ogg" },
+{ note = 83, fileName = "B5.ogg" },
+}, {
+    volume = 0.6,
+    releaseTime = 0.45
+} )
+
+MKeyboard:RegisterInstrument( "(GI) Leaping Spirit Piano", "sound/musical_keyboard/instruments/gi_leaping_spirit_piano", {
+{ note = 48, fileName = "C3.ogg" },
+{ note = 50, fileName = "D3.ogg" },
+{ note = 52, fileName = "E3.ogg" },
+{ note = 53, fileName = "F3.ogg" },
+{ note = 55, fileName = "G3.ogg" },
+{ note = 57, fileName = "A3.ogg" },
+{ note = 59, fileName = "B3.ogg" },
+{ note = 60, fileName = "C4.ogg" },
+{ note = 62, fileName = "D4.ogg" },
+{ note = 64, fileName = "E4.ogg" },
+{ note = 65, fileName = "F4.ogg" },
+{ note = 67, fileName = "G4.ogg" },
+{ note = 69, fileName = "A4.ogg" },
+{ note = 71, fileName = "B4.ogg" },
+{ note = 72, fileName = "C5.ogg" },
+{ note = 74, fileName = "D5.ogg" },
+{ note = 76, fileName = "E5.ogg" },
+{ note = 77, fileName = "F5.ogg" },
+{ note = 79, fileName = "G5.ogg" },
+{ note = 81, fileName = "A5.ogg" },
+{ note = 83, fileName = "B5.ogg" },
+}, {
+    volume = 0.6,
+    releaseTime = 0.3
+} )
