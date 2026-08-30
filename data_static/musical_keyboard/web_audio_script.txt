@@ -49,7 +49,7 @@ const manager = {
     }),
 
     masterCompressorNode: new DynamicsCompressorNode(audioContext, {
-        threshold: -30,
+        threshold: -20,
         knee: 5,
         ratio: 1.5,
         attack: 0.01,
